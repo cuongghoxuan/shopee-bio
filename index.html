@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Săn Deal & Voucher Shopee Mỗi Ngày</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { background-color: #f4f4f9; display: flex; justify-content: center; padding: 20px 10px; }
+        .bio-container { width: 100%; max-width: 480px; background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 20px; }
+        .avatar { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px; }
+        .title { font-size: 1.2rem; color: #333; font-weight: bold; }
+        .desc { font-size: 0.85rem; color: #666; margin-top: 5px; }
+        .section-title { font-size: 1rem; color: #ee4d2d; margin: 15px 0 10px; font-weight: bold; }
+        .card { border: 1px solid #ffe8e0; background: #fff9f8; border-radius: 10px; padding: 12px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+        .card-info { flex: 1; margin-right: 10px; }
+        .card-title { font-size: 0.9rem; font-weight: bold; color: #222; }
+        .card-desc { font-size: 0.8rem; color: #ee4d2d; margin-top: 4px; }
+        .btn-buy { background: #ee4d2d; color: #fff; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; white-space: nowrap; }
+    </style>
+</head>
+<body>
+
+<div class="bio-container">
+    <div class="header">
+        <img src="https://via.placeholder.com/80" alt="Avatar" class="avatar">
+        <div class="title">@sanmabaola</div>
+        <div class="desc">Tổng hợp Voucher & Mã giảm giá Shopee cập nhật tự động 🚀</div>
+    </div>
+
+    <div class="section-title">🔥 Voucher Hot Cập Nhật Hôm Nay</div>
+    <div id="deal-list"></div>
+</div>
+
+<script>
+    fetch('deals.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('deal-list');
+            container.innerHTML = '';
+            data.forEach(deal => {
+                const cardHTML = `
+                    <div class="card">
+                        <div class="card-info">
+                            <div class="card-title">${deal.title}</div>
+                            <div class="card-desc">${deal.discount} - Mã: <strong>${deal.code}</strong></div>
+                        </div>
+                        <a href="${deal.aff_link}" target="_blank" class="btn-buy">Lấy Mã</a>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        })
+        .catch(err => console.error("Lỗi tải dữ liệu:", err));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Mã Freeship Extra 0Đ",
+        "code": "FREESHIP0D",
+        "discount": "Giảm 100% phí ship",
+        "url": "https://shopee.vn/m/mien-phi-van-chuyen",
+        "category": "voucher",
+        "aff_link": "https://shopee.vn/m/mien-phi-van-chuyen?utm_source=an_123456789&utm_medium=affiliate&aff_id=17344610097&sub_id=bio_page"
+    },
+    {
+        "id": 2,
+        "title": "Voucher Điện Tử Giảm 50K",
+        "code": "TECH50K",
+        "discount": "Giảm 50K đơn 250K",
+        "url": "https://shopee.vn/m/ma-giam-gia",
+        "category": "voucher",
+        "aff_link": "https://shopee.vn/m/ma-giam-gia?utm_source=an_123456789&utm_medium=affiliate&aff_id=17344610097&sub_id=bio_page"
+    }
+]
